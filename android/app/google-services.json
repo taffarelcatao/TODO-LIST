@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "918646952027",
+    "project_id": "todo-list-provider-8d52d",
+    "storage_bucket": "todo-list-provider-8d52d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918646952027:android:cdec60d0a3d5f339646f7e",
+        "android_client_info": {
+          "package_name": "br.com.taffarel.todo_list_provider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "918646952027-7hn6t63vcietncn4sfd7t9lvs3f7olo6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwp4bw40oqz9Gf8GxVaaHiqoiXAt2dJYs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "918646952027-7hn6t63vcietncn4sfd7t9lvs3f7olo6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
