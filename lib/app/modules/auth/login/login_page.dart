@@ -29,6 +29,13 @@ class _LoginPageState extends State<LoginPage> {
     DefaultListenerNotifier(changeNotifier: context.read<LoginController>())
         .listner(
       context: context,
+      everCallback: (notifier, listenerInstance) {
+        if(notifier is LoginController){
+          if(notifier.hasInfo){
+            Messages.of(context).showInfo(notifier.infoMessage!);
+          }
+        }
+      },
       successCallback: (notifier, listenerInstance) {
         print('Login tudo certo!!!!');
       },
@@ -87,7 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                               TextButton(
                                 onPressed: () {
                                   if(_emailEC.text.isNotEmpty){
-                                    //recuperarSenha
+                                    context.read<LoginController>().forgotPassword(_emailEC.text);
                                   }else{
                                     _emailFocus.requestFocus();
                                     Messages.of(context).showError('Digite um e-mail para recuperar a senha');
