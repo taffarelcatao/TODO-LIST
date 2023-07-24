@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:todo_list_provider/app/core/notifier/default_change_notifier.dart';
-import 'package:todo_list_provider/app/core/ui/messages.dart';
 import 'package:todo_list_provider/app/exception/auth_exception.dart';
 import 'package:todo_list_provider/app/services/user/user_service.dart';
 
@@ -23,11 +21,11 @@ class LoginController extends DefaultChangeNotifier {
       if (user != null) {
         success();
       } else {
-        _userService.googleLogout();
+        _userService.logout();
         setError('Erro ao relaizar login com Google');
       }
     } on AuthException catch (e) {
-      _userService.googleLogout();
+      _userService.logout();
       setError(e.message);
     } finally {
       hideLoading();
