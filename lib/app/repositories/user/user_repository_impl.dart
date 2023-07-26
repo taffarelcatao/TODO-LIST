@@ -109,24 +109,24 @@ class UserRepositoryImpl implements UserRepository {
             Login invalido você se registrou no TodoList com os seguintes Provedores:
             ${loginMethods?.join(',')}
         ''');
-      }else{
+      } else {
         throw AuthException(message: 'Erro ao realizar login');
       }
     }
   }
-  
+
   @override
   Future<void> logout() async {
     await GoogleSignIn().signOut();
     _firebaseAuth.signOut();
   }
-  
+
   @override
   Future<void> updateDisplayName(String name) async {
-   final user = _firebaseAuth.currentUser;
-   if(user != null){
-    await user.updateDisplayName(name);
-    user.reload();
-   }
+    final user = _firebaseAuth.currentUser;
+    if (user != null) {
+      await user.updateDisplayName(name);
+      user.reload();
+    }
   }
 }

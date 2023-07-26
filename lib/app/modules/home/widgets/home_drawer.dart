@@ -54,15 +54,15 @@ class HomeDrawer extends StatelessWidget {
                   context: context,
                   builder: (_) {
                     return AlertDialog(
-                      title: Text('Alterar Nome'),
+                      title: const Text('Alterar Nome'),
                       content: TextField(
                         onChanged: (value) => nameVN.value = value,
                       ),
                       actions: [
                         TextButton(
                             onPressed: () => Navigator.of(context).pop(),
-                            child: Text(
-                              'cancelar',
+                            child: const Text(
+                              'Cancelar',
                               style: TextStyle(color: Colors.red),
                             )),
                         TextButton(
@@ -71,23 +71,25 @@ class HomeDrawer extends StatelessWidget {
                               if (nameValue.isEmpty) {
                                 Messages.of(context)
                                     .showError('Nome Obrigatório');
-                              }else{
+                              } else {
                                 Loader.show(context);
-                                await context.read<UserService>().updateDisplayName(nameValue);
+                                await context
+                                    .read<UserService>()
+                                    .updateDisplayName(nameValue);
                                 Loader.hide();
                                 Navigator.of(context).pop();
                               }
                             },
-                            child: Text('Alterar')),
+                            child: const Text('Alterar')),
                       ],
                     );
                   });
             },
-            title: Text('Alterar Nome'),
+            title: const Text('Alterar Nome'),
           ),
           ListTile(
             onTap: () => context.read<AuthProvider>().logout(),
-            title: Text('Sair'),
+            title: const Text('Sair'),
           )
         ],
       ),
