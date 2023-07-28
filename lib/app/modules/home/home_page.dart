@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
   void _goToCreateTask(BuildContext context) {
     // Navigator.of(context).pushNamed('/task/create');
     Navigator.of(context).push(PageRouteBuilder(
-      transitionDuration: Duration(milliseconds: 400),
+      transitionDuration: const Duration(milliseconds: 400),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         animation =
             CurvedAnimation(parent: animation, curve: Curves.easeInQuad);
@@ -35,13 +35,13 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: context.primaryColor),
-        backgroundColor: Color(0xFFFAFBFE),
+        backgroundColor: const Color(0xFFFAFBFE),
         elevation: 0,
         actions: [
           PopupMenuButton(
-            icon: Icon(TodoListIcons.filter),
+            icon: const Icon(TodoListIcons.filter),
             itemBuilder: (_) => [
-              PopupMenuItem<bool>(
+              const PopupMenuItem<bool>(
                 child: Text('Mostrar tarefas concluidas'),
               )
             ],
@@ -51,9 +51,9 @@ class HomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: context.primaryColor,
         onPressed: () => _goToCreateTask(context),
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
-      backgroundColor: Color(0xFFFAFBFE),
+      backgroundColor: const Color(0xFFFAFBFE),
       drawer: HomeDrawer(),
       body: LayoutBuilder(builder: (context, constraints) {
         return SingleChildScrollView(
@@ -63,8 +63,8 @@ class HomePage extends StatelessWidget {
               minWidth: constraints.maxWidth,
             ),
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 20),
-              child: IntrinsicHeight(
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              child: const IntrinsicHeight(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
