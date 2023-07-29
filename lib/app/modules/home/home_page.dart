@@ -64,7 +64,7 @@ class HomePage extends StatelessWidget {
             ),
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 20),
-              child: const IntrinsicHeight(
+              child: IntrinsicHeight(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
